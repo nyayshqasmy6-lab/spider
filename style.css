@@ -1,0 +1,76 @@
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: #fff;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.stage {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#art {
+  display: block;
+  height: min(88vh, 1000px);
+  width: auto;
+  max-width: 96vw;
+  overflow: visible;
+}
+
+#web {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.silhouette {
+  fill: #000;
+  stroke: #000;
+  stroke-width: 0.7;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  fill-opacity: 0;
+}
+
+.silhouette.drawing {
+  fill-opacity: 0;
+}
+
+#replay {
+  margin-top: 8px;
+  padding: 10px 20px;
+  color: #fff;
+  background: #171717;
+  border: 0;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+#replay:disabled {
+  opacity: .55;
+  cursor: wait;
+}
+
+@keyframes trace {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes fillIn {
+  to { fill-opacity: 1; }
+}
